@@ -16,12 +16,12 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content.startswith("앤 안녕"):
+    if message.content.startswith("앤안녕"):
         await client.send_message(message.channel, "안녕하세요")
 
 @client.event
 async def on_message(message):
-   if message.content.startswith("앤 들어와"):
+    if message.content.startswith("앤들어와"):
         channel = message.author.voice.voice_channel
         server = message.server
         voice_client = client.voice_client_in(server)
@@ -29,10 +29,10 @@ async def on_message(message):
         print(voice_client)
         print("들어와")
         if voice_client== None:
-            await client.send_message(message.channel, '') 
+            await client.send_message(message.channel, '들어왔어.') 
             await client.join_voice_channel(channel)
         else:
-            await client.send_message(message.channel, '') 
+            await client.send_message(message.channel, '앤이 이미 들어와있잖아!') 
 
 access_token = os.environ["BOT_TOKEN"]
 client.run(access_token)

@@ -1,5 +1,5 @@
 import discord
-import datetime
+import os
 
 
 client = discord.Client()
@@ -34,5 +34,5 @@ async def on_message(message):
         else:
             await client.send_message(message.channel, '') 
 
-
-client.run('NTQ5MTM4NTE3NjA4MTAzOTM2.D1Pgqg.nAzM16OAc-5CuxKzOPmpFvMdYUc')
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
